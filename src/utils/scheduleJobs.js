@@ -1,6 +1,6 @@
 const schedule = require('node-schedule');
 const { getWeatherData } = require('../routes/weatherService');
-const { setLighting } = require('../routes/lightingService');
+// const { setLighting } = require('../routes/lightingService');
 
 const updateLighting = async () => {
   try {
@@ -29,5 +29,5 @@ const updateLighting = async () => {
   }
 };
 
-// Schedule job every 10 seconds for now
-schedule.scheduleJob('*/10 * * * * *', updateLighting);
+// // Schedule job every 10 seconds for now
+// schedule.scheduleJob('*/10 * * * * *', updateLighting);

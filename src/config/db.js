@@ -1,5 +1,4 @@
-require('dotenv').config(); // Ensure .env file is loaded
-
+require('dotenv').config();
 const { Sequelize } = require('sequelize');
 
 console.log("DATABASE_URL:", process.env.DATABASE_URL);
