@@ -6,10 +6,10 @@ AmbientWeather is a back-end project that integrates real-time weather data with
 
 - [Jira Board](https://qeambientweather.atlassian.net/jira/software/projects/KAN/boards/1)
 - [Team Agreement](https://github.com/QEA-Javascript/server/wiki/Team-Agreement)
+- [Pitch idea](https://docs.google.com/document/d/1YEaYmqpfJu-BndbhThsLGw2J7lDyXnWKuzQ3esEsSJo/edit)
 - [SoftwareRequirement.md](https://github.com/QEA-Javascript/AmbientWeather/wiki/Software-Requirements-Page)
-- [Pitch GDoc](https://docs.google.com/document/d/1YEaYmqpfJu-BndbhThsLGw2J7lDyXnWKuzQ3esEsSJo/edit)
-- [Wireframe]() : image to insert here
-
+- [User Stories](https://github.com/QEA-Javascript/AmbientWeather/wiki/User-Stories)
+- [UML Wire-frame](https://github.com/QEA-Javascript/AmbientWeather/wiki/UML) : ![alt text](img/UML.png)
 
 
 ### Features
