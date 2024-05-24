@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Amanda Marquez, Evan Cheng, and Qilin Xie",
-  "license": "MIT"
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
