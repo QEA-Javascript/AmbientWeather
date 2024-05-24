@@ -35,18 +35,23 @@ User.beforeCreate(async (user) => {
 });
 
 User.authenticateBasic = async (username, password) => {
-  const user = await User.findOne({ where: { username } });
-  if (!user) {
-    throw new Error('Invalid User');
-  }
+  try {
+    const user = await User.findOne({ where: { username } });
+    if (!user) {
+      throw new Error('Invalid User');
+    }
 
-  const isValidPassword = await bcrypt.compare(password, user.password);
-  if (!isValidPassword) {
-    throw new Error('Invalid User');
-  }
+    const isValidPassword = await bcrypt.compare(password, user.password);
+    if (!isValidPassword) {
+      throw new Error('Invalid User');
+    }
 
-  return user;
+    return user;
+  } catch (error) {
+    throw new Error(error.message);
+  }
 };
+
 
 User.authenticateToken = async (token) => {
   try {
