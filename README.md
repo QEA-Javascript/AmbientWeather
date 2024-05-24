@@ -23,3 +23,24 @@ AmbientWeather is a back-end project that integrates real-time weather data with
 - **Weather Data:** Axios for API calls to a weather service
 - **Scheduling:** Node Schedule for timed lighting adjustments
 - **Communication with Hardware:** Flask server on Raspberry Pi for controlling lights
+
+-----------------------
+
+### Document OAuth Screenshots:
+POST with http://localhost:3000/auth/register:
+
+{
+    "username": "",
+    "password": ""
+}
+
+![alt text](img/register.png)
+
+
+POST with http://localhost:3000/auth/login:
+
+![alt text](img/login.png) input auth login
+
+Get with http://localhost:3000/auth/protected:
+
+![alt text](img/token.png) input token
