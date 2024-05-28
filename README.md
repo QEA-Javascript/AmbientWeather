@@ -10,6 +10,8 @@ AmbientWeather is a back-end project that integrates real-time weather data with
 - [SoftwareRequirement.md](https://github.com/QEA-Javascript/AmbientWeather/wiki/Software-Requirements-Page)
 - [User Stories](https://github.com/QEA-Javascript/AmbientWeather/wiki/User-Stories)
 - [UML Wire-frame](https://github.com/QEA-Javascript/AmbientWeather/wiki/UML) : ![alt text](img/UML.png)
+- [Domain Modeling](https://github.com/QEA-Javascript/AmbientWeather/wiki/Domain-Modeling-for-AmbientWeather-Project)
+- [Database Schema](https://github.com/QEA-Javascript/AmbientWeather/wiki/Database-Schema)
 
 
 ### Features
@@ -44,3 +46,21 @@ POST with http://localhost:3000/auth/login:
 Get with http://localhost:3000/auth/protected:
 
 ![alt text](img/token.png) input token
+
+## MQTT Integration
+
+This project integrates with an MQTT broker to communicate with a Raspberry Pi.
+
+### Usage
+
+The MQTT client is configured in `src/utils/mqttClient.js`. You can publish messages to MQTT topics using the `publishMessage` function.
+
+### POST /lighting/set-lighting
+
+**Description**: Sets the lighting settings.
+
+**Body Parameters**:
+- `color` (string): The color to set.
+- `intensity` (number): The intensity level.
+
+**Authorization**: Bearer token and 'write' capability required.
