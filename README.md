@@ -66,3 +66,7 @@ The MQTT client is configured in `src/utils/mqttClient.js`. You can publish mess
 - `intensity` (number): The intensity level.
 
 **Authorization**: Bearer token and 'write' capability required.
+
+## Testing with command light:
+![alt text](img/vs-light-testing.png)
+![alt text](img/terminal-thunder-post.png)

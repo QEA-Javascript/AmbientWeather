@@ -21,7 +21,7 @@ const User = sequelize.define('User', {
   },
   capabilities: {
     type: DataTypes.ARRAY(DataTypes.STRING),
-    defaultValue: ['read'],
+    defaultValue:  ['read', 'write'],
   },
 });
 
