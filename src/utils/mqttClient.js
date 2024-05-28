@@ -5,11 +5,9 @@ const brokerUrl = process.env.MQTT_BROKER_URL;
 const options = {
   username: process.env.MQTT_USERNAME,
   password: process.env.MQTT_PASSWORD,
+  port: 8883,
+  protocol: 'mqtts'
 };
-
-console.log('MQTT Broker URL:', brokerUrl);
-console.log('MQTT Username:', options.username);
-// Do not log the password for security reasons
 
 const client = mqtt.connect(brokerUrl, options);
 
