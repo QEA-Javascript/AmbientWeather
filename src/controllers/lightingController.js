@@ -5,20 +5,18 @@ const { publishMessage } = require('../utils/mqttClient');
 
 const router = express.Router();
 
-router.post('/set-lighting', bearerAuth, acl('write'), async (req, res) => {
-  try {
-    const { color, intensity } = req.body;
+router.post('/set-lighting', bearerAuth, acl('write'), (req, res) => {
+  const { command } = req.body;
 
-    // Publish the lighting settings to a specific topic
-    const topic = 'home/lighting';
-    const message = JSON.stringify({ color, intensity });
-
-    publishMessage(topic, message);
-
-    res.status(200).send('Lighting settings updated');
-  } catch (e) {
-    res.status(500).send(e.message);
+  const validCommands = ['BRIGHT', 'MEDIUM', 'DIM', 'OFF'];
+  if (!validCommands.includes(command)) {
+    return res.status(400).send('Invalid command');
   }
+
+  const topic = 'home/lighting';
+  publishMessage(topic, command);
+
+  res.status(200).send(`Lighting command "${command}" sent`);
 });
 
 module.exports = router;
