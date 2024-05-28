@@ -29,6 +29,8 @@ AmbientWeather is a back-end project that integrates real-time weather data with
 -----------------------
 
 ### Document OAuth Screenshots:
+- Database table psql: ![alt text](img/db.png)
+
 POST with http://localhost:3000/auth/register:
 
 {

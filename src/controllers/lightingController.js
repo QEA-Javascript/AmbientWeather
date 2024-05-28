@@ -9,7 +9,11 @@ router.post('/set-lighting', bearerAuth, acl('write'), async (req, res) => {
   try {
     const { color, intensity } = req.body;
 
-    publishMessage('home/lighting', JSON.stringify({ color, intensity }));
+    // Publish the lighting settings to a specific topic
+    const topic = 'home/lighting';
+    const message = JSON.stringify({ color, intensity });
+
+    publishMessage(topic, message);
 
     res.status(200).send('Lighting settings updated');
   } catch (e) {

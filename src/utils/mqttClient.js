@@ -7,6 +7,10 @@ const options = {
   password: process.env.MQTT_PASSWORD,
 };
 
+console.log('MQTT Broker URL:', brokerUrl);
+console.log('MQTT Username:', options.username);
+// Do not log the password for security reasons
+
 const client = mqtt.connect(brokerUrl, options);
 
 client.on('connect', () => {
