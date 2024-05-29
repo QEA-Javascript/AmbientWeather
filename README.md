@@ -26,8 +26,54 @@ AmbientWeather is a back-end project that integrates real-time weather data with
 - **Scheduling:** Node Schedule for timed lighting adjustments
 - **Communication with Hardware:** Flask server on Raspberry Pi for controlling lights
 
------------------------
+## MQTT Integration
 
+This project integrates with an MQTT broker to communicate with a Raspberry Pi.
+
+### Usage
+
+The MQTT client is configured in `src/utils/mqttClient.js`. You can publish messages to MQTT topics using the `publishMessage` function.
+
+# Getting Started
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- Node.js
+- npm
+- PostgreSQL
+- Python (for the Raspberry Pi and Flask server)
+- An MQTT broker account (e.g., HiveMQ)
+
+## Setting Up the Project
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/QEA-Javascript/AmbientWeather.git
+cd AmbientWeather
+
+npm install
+
+
+#### .env file sample:
+PORT=3000
+WEATHER_API_KEY=your_weather_api_key
+WEATHER_API_URL=https://api.weatherbit.io/v2.0/current
+CITY=your-city
+SECRET=your_secret_key
+DATABASE_URL=postgres://your_postgres_user:your_postgres_password@localhost:5432/your_database_name
+MQTT_BROKER_URL=mqtts://your_mqtt_broker_url:8884/mqtt
+MQTT_USERNAME=your_mqtt_username
+MQTT_PASSWORD=your_mqtt_password
+
+Run the Server
+npm start
+```
+
+-----------------------
+### OAUTH not required for this project but can be further implemented if we have UI:
 ### Document OAuth Screenshots:
 - Database table psql: ![alt text](img/db.png)
 
@@ -49,13 +95,6 @@ Get with http://localhost:3000/auth/protected:
 
 ![alt text](img/token.png) input token
 
-## MQTT Integration
-
-This project integrates with an MQTT broker to communicate with a Raspberry Pi.
-
-### Usage
-
-The MQTT client is configured in `src/utils/mqttClient.js`. You can publish messages to MQTT topics using the `publishMessage` function.
 
 ### POST /lighting/set-lighting
 
@@ -70,3 +109,11 @@ The MQTT client is configured in `src/utils/mqttClient.js`. You can publish mess
 ## Testing with command light:
 ![alt text](img/vs-light-testing.png)
 ![alt text](img/terminal-thunder-post.png)
+
+--Weather (temp)
+![alt text](img/temp-thunder-post.png)
+![alt text](img/vs-weather-testing.png)
+
+
+## Conclusion
+AmbientWeather leverages real-time weather data to dynamically adjust indoor lighting, creating an immersive environment that responds to the weather outside. This project demonstrates the seamless integration of various technologies including Node.js, MQTT, and Raspberry Pi to achieve a smart and responsive lighting system.
