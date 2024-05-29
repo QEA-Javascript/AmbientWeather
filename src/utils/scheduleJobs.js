@@ -4,12 +4,14 @@ const { getWeatherData } = require('../routes/weatherService');
 const mqtt = require('mqtt');
 const mqttUrl = process.env.MQTT_URL;
 const client = mqtt.connect(mqttUrl);
+
 client.on('connect', () => {
   console.log('Connected to MQTT broker');
 });
 client.on('error', (err) => {
   console.error('MQTT connection error:', err);
 });
+
 const updateLighting = async () => {
   try {
     console.log('Fetching weather data...');

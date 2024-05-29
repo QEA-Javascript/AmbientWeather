@@ -3,11 +3,10 @@ const logger = require('./middleware/logger');
 const authRoutes = require('./routes/authRoutes');
 const lightingRoutes = require('./routes/lightingRoutes');
 const weatherRoutes = require('./routes/weatherRoutes');
-const sequelize = require('./config/db'); // Import Sequelize instance
-const User = require('./models/userModel'); // Import User model
+const sequelize = require('./config/db');
 require('dotenv').config();
 require('./utils/scheduleJobs');
-// require('./utils/mqttClient');
+
 
 const app = express();
 
@@ -20,7 +19,6 @@ app.use('/weather', weatherRoutes);
 
 const PORT = process.env.PORT || 3000;
 
-// Synchronize models with the database
 sequelize.sync()
   .then(() => {
     console.log('All models were synchronized successfully.');

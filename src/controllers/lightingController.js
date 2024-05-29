@@ -1,7 +1,7 @@
 const express = require('express');
 const bearerAuth = require('../middleware/bearer');
 const acl = require('../middleware/acl');
-const { publishMessage } = require('../utils/mqttClient');
+
 
 const router = express.Router();
 
@@ -13,8 +13,7 @@ router.post('/set-lighting', bearerAuth, acl('write'), (req, res) => {
     return res.status(400).send('Invalid command');
   }
 
-  const topic = 'home/lighting';
-  publishMessage(topic, command);
+  console.log(`Lighting command "${command}" sent`);
 
   res.status(200).send(`Lighting command "${command}" sent`);
 });
