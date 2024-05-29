@@ -7,7 +7,7 @@ const sequelize = require('./config/db'); // Import Sequelize instance
 const User = require('./models/userModel'); // Import User model
 require('dotenv').config();
 require('./utils/scheduleJobs');
-require('./utils/mqttClient');
+// require('./utils/mqttClient');
 
 const app = express();
 
