@@ -73,6 +73,10 @@ npm start
 ```
 
 -----------------------
+Jest test:
+![alt text](img/jest.png)
+
+
 ### OAUTH not required for this project but can be further implemented if we have UI:
 ### Document OAuth Screenshots:
 - Database table psql: ![alt text](img/db.png)
