@@ -39,6 +39,7 @@ const updateLighting = async () => {
     case 'thunderstorm':
     case 'thunderstorm with light rain':
     case 'thunderstorm with rain':
+    case 'thunderstorm with heavy rain':
       color = 'Thunderstorm';
       break;
     case 'snow':
