@@ -17,7 +17,6 @@ AmbientWeather is a back-end project that integrates real-time weather data with
 ### Features
 - **Real-time Weather Integration:** Fetches weather data from a weather API.
 - **Dynamic Lighting Adjustment:** Changes indoor lighting settings based on weather conditions.
-- **User Customization:** Allows users to set preferences for different weather conditions.
 - **Scheduling:** Automates lighting adjustments at specified intervals.
 
 ### Tech Stack
@@ -29,10 +28,6 @@ AmbientWeather is a back-end project that integrates real-time weather data with
 ## MQTT Integration
 
 This project integrates with an MQTT broker to communicate with a Raspberry Pi.
-
-### Usage
-
-The MQTT client is configured in `src/utils/mqttClient.js`. You can publish messages to MQTT topics using the `publishMessage` function.
 
 # Getting Started
 

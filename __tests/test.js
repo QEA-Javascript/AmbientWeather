@@ -12,7 +12,7 @@ app.use('/lighting', lightingRoutes);
 app.use('/weather', weatherRoutes);
 
 beforeAll(async () => {
-  await sequelize.sync({ force: true }); // Recreate the database schema for testing
+  await sequelize.sync({ force: true });
 });
 
 describe('Auth Routes', () => {
@@ -53,7 +53,7 @@ describe('Lighting Routes', () => {
       .send({ command: 'BRIGHT' });
 
     expect(response.status).toBe(200);
-    expect(response.text).toBe('Lighting settings updated'); // Updated to match the actual response
+    expect(response.text).toBe('Lighting settings updated');
   });
 });
 
@@ -62,7 +62,7 @@ describe('Weather Routes', () => {
     const response = await request(app).get('/weather/current-weather');
 
     expect(response.status).toBe(200);
-    // You can add more assertions based on the expected structure of your weather data
+
   });
 });
 

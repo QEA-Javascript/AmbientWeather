@@ -3,9 +3,7 @@ const { Sequelize } = require('sequelize');
 
 console.log("DATABASE_URL:", process.env.DATABASE_URL);
 
-const DATABASE_URL="postgres://qilinxie:HT5S1XwITcsBwMDo50MPdpqNJEw8qdcA@dpg-cop7piacn0vc73do1mrg-a.oregon-postgres.render.com/ambientweatheruser?sslmode=require";
-
-const sequelize = new Sequelize(DATABASE_URL, {
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialect: 'postgres',
   logging: false,
 });
