@@ -66,5 +66,5 @@ const updateLighting = async () => {
     console.error('Error updating lighting:', error);
   }
 };
-// Schedule job every 10 seconds for now
+
 schedule.scheduleJob('*/10 * * * * *', updateLighting);
